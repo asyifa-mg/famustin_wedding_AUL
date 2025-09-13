@@ -84,9 +84,28 @@ body {
   color: #c4c8cb;
 }
 
+/* countdown wrapper */
+.simply-countdown-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* jarak antar kotak */
+  flex-wrap: nowrap; /* cegah turun ke bawah */
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* countdown box */
+.simply-countdown-circle > .simply-section {
+  min-width: 60px; /* kunci ukuran supaya nggak melebar */
+  max-width: 70px; /* biar gak terlalu besar */
+  /* padding: 0rem; */
+  flex: 0 0 auto; /* jangan ikut melar */
+  text-align: center;
+}
+
 .mynavbar {
   background-color: rgb(255, 255, 255, 0.4) !important;
-  backdrop-filter: blur(4px);
 }
 
 .mynavbar .offcanvas {
@@ -358,12 +377,16 @@ body {
 .rsvp p {
   color: #000;
 }
+
 .rsvp form label {
   padding-top: 40px;
-  font-size: medium;
+  font-size: 1rem;
+  color: var(--bs-green);
+  font-weight: bold;
 }
 
-.rsvp form input {
+.rsvp form input,
+.rsvp form select {
   border-color: var(--bs-green);
 }
 
@@ -452,33 +475,34 @@ footer li {
     font-size: 75%;
   }
   .simply-countdown-circle > .simply-section {
-    padding: 2rem;
-    margin: 5px;
+    padding: 0.5rem;
+    min-width: 85px;
+    max-width: 95px;
   }
   .home .heart {
     display: none;
   }
   .timeline::before {
-    left: 60px;
+    display: none;
   }
   .timeline li .timeline-image {
-    left: 15px;
-    margin-left: 45%;
+    left: 10px;
+    margin-left: 10%;
     top: 16px;
   }
   .timeline li .timeline-panel {
-    width: calc((100%-200px));
+    width: calc(100% - 200px);
     float: right;
   }
   .timeline li .timeline-panel::before {
     border-left-width: 0;
     border-right-width: 15px;
-    left: -15px;
+    left: -14px;
     right: auto;
   }
   .timeline li .timeline-panel::after {
     border-left-width: 0;
-    border-right-width: 14px;
+    border-right-width: 13px;
     left: -13px;
     right: auto;
   }
@@ -489,8 +513,9 @@ footer li {
     font-size: 65%;
   }
   .simply-countdown-circle > .simply-section {
-    padding: 1rem;
-    margin: 5px;
+    min-width: 80px;
+    max-width: 90px;
+    padding: 0.5rem;
   }
   .mynavbar .nav-link {
     font-size: 2rem;
@@ -499,9 +524,60 @@ footer li {
   .sticky-top {
     overflow: hidden;
   }
+  .timeline::before {
+    display: none;
+  }
   .timeline li .timeline-image {
+    left: 25px;
+    margin-left: 10%;
+    top: 30px;
     width: 100px;
     height: 100px;
+  }
+  .timeline li .timeline-panel {
+    width: calc(100% - 160px);
+    float: right;
+  }
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 13px;
+    top: 60px;
+    left: -13px;
+    right: auto;
+  }
+  .timeline li .timeline-panel::after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    top: 60px;
+    left: -13px;
+    right: auto;
+  }
+
+  .offcanvas {
+    width: 50% !important;
+  }
+  .rsvp form label {
+    padding-top: 0 !important;
+    margin-bottom: 4px !important; /* label dekat ke input */
+    display: block;
+  }
+  .rsvp form input,
+  .rsvp form select {
+    margin-bottom: 12px !important; /* antar field tidak jauh */
+    width: 100% !important; /* isiannya penuh sesuai layar */
+    display: block;
+  }
+
+  /* Rapikan tombol Kirim */
+  .rsvp form .btn {
+    display: block;
+    margin-left: auto; /* geser ke kanan */
+    margin-top: 8px; /* jarak kecil dari field terakhir */
+  }
+
+  /* Hilangkan margin-top inline 70px di tombol */
+  .rsvp form .col-12[style] {
+    margin-top: 0 !important;
   }
 }
 
@@ -511,21 +587,40 @@ footer li {
     font-size: 60%;
   }
   .simply-countdown-circle > .simply-section {
-    padding: 0.5rem;
-    margin: 3px;
+    min-width: 60px; /* makin kecil */
+    max-width: 60px;
+    padding: 0.3rem;
+    font-size: 1rem;
+  }
+  .timeline::before {
+    display: none;
   }
   .timeline li .timeline-image {
+    left: 15px;
+    margin-left: 10%;
+    top: 30px;
     width: 80px;
     height: 80px;
   }
   .timeline li .timeline-panel {
-    width: 65%;
-    transform: translateX(-20px);
+    width: calc(80% - 40px);
+    float: right;
   }
-  /* .timeline li .timeline-panel::before {
-    top: 30px;
+  .timeline li .timeline-panel::before {
+    border-left-width: 0;
+    border-right-width: 14px;
+    top: 60px;
+    left: -16px;
+    right: auto;
   }
   .timeline li .timeline-panel::after {
-    top: 31px;
-  } */
+    border-left-width: 0;
+    border-right-width: 13px;
+    top: 60px;
+    left: -13px;
+    right: auto;
+  }
+  .offcanvas {
+    width: 70% !important; /* misalnya 70% layar */
+  }
 }
