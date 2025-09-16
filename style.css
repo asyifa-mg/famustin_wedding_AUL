@@ -26,7 +26,11 @@
   --bs-secondary-border-subtle: #c4c8cb;
   --bs-success-border-subtle: #a3cfbb;
   --bs-info-border-subtle: #9eeaf9;
-  --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
+  --shadow: 0 2px 3px rgb(0 0 0 / 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -42,11 +46,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(img/wedding.jpg);
+  background-image: url(img/bg-utama.jpg);
   background-size: cover;
   background-position: center;
   z-index: -1; /*supaya gabar dibelakang  */
-  filter: blur();
+  filter: blur(2px);
 }
 
 .hero {
@@ -54,15 +58,41 @@ body {
   min-height: 100vh;
 }
 
+.hero img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 4px solid #dbe1bc;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  outline: 4px solid #c9a063;
+  outline-offset: 8px;
+  background: #e7e7e3;
+}
+
 .hero h1,
 .hero h4,
 .hero p {
   text-shadow: var(--shadow);
+  animation: fadeInUp 1.2s ease-out;
 }
 
+.hero h3 {
+  text-shadow: var(--shadow);
+  animation: fadeInUp 1s ease-out;
+  padding-top: 10px;
+  color: rgb(208, 191, 148);
+}
+
+.hero h2 {
+  padding-bottom: 20px;
+  text-shadow: var(--shadow);
+  animation: fadeInDown 1s ease-out;
+}
 .hero h1 {
   font-family: "Italianno", cursive;
   font-size: 6rem;
+  padding-top: 20px;
 }
 
 .hero h4 {
@@ -74,14 +104,14 @@ body {
 }
 
 .hero a {
-  color: var(--bs-success-border-subtle);
-  background-color: white;
+  color: var(--bs-black);
+  background-color: var(--bs-secondary-border-subtle);
   box-shadow: var(--bs-secondary-border-subtle);
 }
 
 .hero a:hover {
-  background-color: var(--bs-green);
-  color: #c4c8cb;
+  background-color: var(--bs-danger-bg-subtle);
+  color: #060707;
 }
 
 /* countdown wrapper */
@@ -99,13 +129,13 @@ body {
 .simply-countdown-circle > .simply-section {
   min-width: 60px; /* kunci ukuran supaya nggak melebar */
   max-width: 70px; /* biar gak terlalu besar */
-  /* padding: 0rem; */
   flex: 0 0 auto; /* jangan ikut melar */
   text-align: center;
 }
 
 .mynavbar {
-  background-color: rgb(255, 255, 255, 0.4) !important;
+  background-color: rgba(85, 57, 4, 0.4) !important;
+  backdrop-filter: blur(7px);
 }
 
 .mynavbar .offcanvas {
@@ -119,25 +149,104 @@ body {
   font-weight: bold;
 }
 
+.mynavbar .offcanvas-header.bg-dark-subtle {
+  background-color: #bfbbb2 !important;
+}
+
 .mynavbar .nav-link {
   text-transform: uppercase;
+  color: #804e23;
+}
+.mynavbar .nav-link:hover {
+  color: #bf6f2d;
+}
+
+.utama {
+  margin-top: 0px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: url(img/bg-utama3.jpg);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.utama h2 {
+  color: #444;
+  margin-bottom: 1rem;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.8s ease;
+}
+.fade-in2 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 0.8s ease;
+}
+.fade-in.show,
+.fade-in2.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro {
+  margin-top: 0px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #a89272;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  filter: blur();
+  overflow: hidden;
+}
+
+/* Daun Intro Section */
+.intro .daun1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 180px;
+  z-index: 1;
+  animation: daun1-move 6s ease-in-out infinite alternate;
+}
+
+.intro .daun2 {
+  position: absolute;
+  left: 0;
+  bottom: 120px;
+  width: 180px;
+  z-index: 1;
+  animation: daun2-move 7s ease-in-out infinite alternate;
+}
+
+.intro h2 {
+  font-size: 3rem;
+  color: rgb(151, 109, 2);
+  margin-bottom: 20px;
+}
+.intro p,
+.gifts p {
+  font-size: 1.1rem;
+  color: #444;
 }
 
 .home {
-  background-image: url(img/istockphoto-1298231117-612x612.jpg);
+  background-color: #e3d7bb;
   background-size: cover;
-  min-height: 100vh;
-  margin-top: -6rem;
-  padding-top: 15rem;
+  margin-top: 0px;
+  padding-top: 10rem;
   padding-bottom: 5rem;
 }
 
+.utama h2,
 .home h2,
 .info h2,
-.story h2,
-.galeri h2,
 .rsvp h2,
-.gifts h2 {
+.gifts h2,
+.thanks h2 {
   color: var(--bs-dark);
   font-family: "Italianno", cursive;
   font-size: 5rem;
@@ -164,11 +273,13 @@ body {
 .home .couple h3 {
   font-family: "Italianno", cursive;
   font-size: 2.4rem;
-  color: var(--bs-green);
+  color: rgb(151, 109, 2);
 }
 
 .home .couple img {
   width: 100%;
+  background-color: #666;
+  border: #efebeb solid 3px;
 }
 
 /* Love */
@@ -189,185 +300,136 @@ body {
   color: var(--bs-pink);
 }
 
+/* keyframes untuk bagian awal undangan */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* KEYFRAMES DAUN */
+@keyframes daun1-move {
+  0% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(-5px) rotate(10deg);
+  }
+}
+
+@keyframes daun2-move {
+  0% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(-5px) rotate(10deg);
+  }
+}
+
 /* Section 3 */
 .info {
-  background-color: var(--bs-green);
-  color: var(--bs-secondary-border-subtle);
+  background-image: url(img/bg-utama3.jpg);
+  color: var(--bs-black);
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
 .info h2 {
-  color: var(--bs-white);
+  color: var(--bs-black);
   font-family: "Italianno", cursive;
   font-size: 5rem;
   font-weight: bold;
   text-shadow: var(--shadow);
 }
 
-.info .alamat {
+.info p {
   font-size: 1.1rem;
-}
-
-.info .description {
-  font-size: 1rem;
-  font-size: 300;
+  color: var(--bs-black);
+  margin-top: 20px;
 }
 
 .info .card {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  color: white !important;
-  border: 1px solid #999;
+  background-color: #a89272 !important;
+  color: black !important;
+  border: 2px solid rgb(210, 208, 200);
 }
 
 .info .card-header {
-  border-bottom: 1px solid #999;
+  border-bottom: 2px solid rgb(210, 208, 200);
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  color: rgb(79, 61, 15);
 }
 
 .info .card-body {
   font-size: 1rem;
+  color: rgb(79, 61, 15);
 }
 
 .info .card-footer {
-  border-top: 1px solid #999;
+  border-top: 2px solid rgb(210, 208, 200);
+  font-size: 1rem;
+  color: rgb(79, 61, 15);
+}
+.info .card-footer p {
   font-size: 0.9rem;
-  font-weight: 300;
+  color: rgb(79, 61, 15);
 }
 
-/* Story */
-.story,
-.galeri,
+.info .card-footer a {
+  color:var(--bs-warning-bg-subtle);
+  background-color: #7d4b00;
+}
+.info .card-footer a:hover {
+  color: var(--bs-black);
+  background-color: rgb(141, 124, 59);
+}
+
 .rsvp,
-.gifts {
+.gifts,
+.thanks {
   padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
-.story span,
-.galeri span,
+.utama p,
+.intro h5,
 .gifts span {
   text-transform: uppercase;
-  color: var(--bs-teal);
+  color: var(--bs-black);
   font-size: 0.9rem;
   letter-spacing: 1px;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-.story p,
-.galeri p,
 .rsvp p,
-.gifts p {
+.gifts p,
+.thanks p,
+.gifts .card-thanks {
   font-size: 1rem;
   font-weight: 300;
 }
 
-.timeline {
-  list-style: none;
-  padding: 1.4rem 0;
-  margin-top: 1rem;
-  position: relative;
-}
-
-.timeline::before {
-  content: "";
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  width: 1px;
-  background-color: #198754;
-  left: 50%;
-}
-
-.timeline li {
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.timeline li::before,
-.timeline li::after {
-  content: "";
-  display: table;
-}
-
-.timeline li::after {
-  clear: both;
-}
-
-.timeline li .timeline-image {
-  width: 160px;
-  height: 160px;
-  background-color: #ccc;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.timeline li .timeline-panel {
-  width: 40%;
-  float: left;
-  border: 1px solid #ccc;
-  padding: 2rem;
-  position: relative;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.timeline li .timeline-panel::before {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-top: 15px solid transparent;
-  border-left: 15px solid #ccc;
-  border-right: 0 solid #ccc;
-  border-bottom: 15px solid transparent;
-  top: 80px;
-  right: -15px;
-}
-
-.timeline li .timeline-panel::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  border-top: 14px solid transparent;
-  border-left: 14px solid #000;
-  border-right: 0 solid #000;
-  border-bottom: 14px solid transparent;
-  top: 81px;
-  right: -13px;
-}
-
-.timeline li.timeline-inverted .timeline-panel {
-  float: right;
-}
-
-.timeline li.timeline-inverted .timeline-panel::before {
-  border-left-width: 0;
-  border-right-width: 15px;
-  left: -15px;
-  right: auto;
-}
-.timeline li.timeline-inverted .timeline-panel::after {
-  border-left-width: 0;
-  border-right-width: 14px;
-  left: -13px;
-  right: auto;
-}
-
-.galeri {
-  background-color: var(--bs-success-bg-subtle);
-}
-
 .rsvp {
   background-color: var(--bs-light);
+  background-color: #e3d7bb;
+  background-size: cover;
 }
 
 .rsvp h2 {
@@ -381,28 +443,82 @@ body {
 .rsvp form label {
   padding-top: 40px;
   font-size: 1rem;
-  color: var(--bs-green);
-  font-weight: bold;
+  color: rgb(79, 61, 15);
 }
 
 .rsvp form input,
 .rsvp form select {
-  border-color: var(--bs-green);
+  border-color: var(--bs-white);
 }
 
 .rsvp button {
-  background-color: var(--bs-green);
+  background-color: rgb(79, 61, 15);
   border: 1px solid var(--bs-dark-bg-subtle);
 }
 
 .rsvp button:hover {
-  background-color: var(--bs-success-bg-subtle);
-  color: var(--bs-purple);
+  background-color: rgb(141, 124, 59);
+  color: white;
   border: 1px solid var(--bs-warning-bg-subtle);
 }
 
 .gifts {
-  background-color: var(--bs-success-bg-subtle);
+  background-color: #a89272;
+}
+.gifts button:hover {
+  background-color: rgb(79, 61, 15);
+  border: 1px solid var(--bs-dark-bg-subtle);
+}
+
+.gifts .card-thanks {
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #fffefeff;
+  text-align: center;
+  font-style: italic;
+  padding: 30px 25px;
+  margin-top: 25px;
+  border-radius: 50px;
+  font-family: "Work Sans", sans-serif;
+  transition: all 0.6s ease;
+}
+
+/* Hover efek glowing */
+.gifts .card-thanks:hover {
+  transform: translateY(-6px) scale(1.02);
+  background: linear-gradient(135deg, #435221ff, #075c12ff); /* hijau fresh */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(150, 230, 161, 0.5);
+  color: #ffffffff; /* teks ikut berubah */
+}
+
+.gifts #collapseExample .card-body {
+  background-color: #f9fafb; /* abu-abu sangat lembut */
+  color: #333;
+  margin: 5px 0;
+  border: 1px solid #dee2e6; /* border abu-abu halus */
+  border-radius: 12px; /* sudut membulat */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* bayangan halus */
+  transition: all 0.3s ease;
+  width: 400px; /* atur lebar sesuai kebutuhan */
+  max-width: 100%;
+  text-align: center; /* teks juga di tengah */
+  background: linear-gradient(135deg, #765f6cff, #3e3b1aff); /* hijau fresh */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(150, 230, 161, 0.5);
+  color: #ffffffff; /* teks ikut berubah */
+}
+
+.gifts #collapseExample .card-body:hover {
+  color: #708d39ff;
+  box-shadow: 0 6px 80px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px) scale(1.02);
+  background: linear-gradient(135deg, #435221ff, #075c12ff); /* hijau fresh */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(150, 230, 161, 0.5);
+  color: #ffffffff; /* teks ikut berubah */
+}
+.gifts #collapseExample .card-thanks {
+  width: 600px;
 }
 
 .gifts ul li {
@@ -411,10 +527,41 @@ body {
   border-color: #198754;
 }
 
+/* thanks */
+.thanks {
+  background-color: #e3d7bb;
+  background-size: cover;
+  min-height: 50vh;
+}
+
+.thanks img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 4px solid #dbe1bc;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  outline: 4px solid #c9a063;
+  outline-offset: 8px;
+  background: #e7e7e3;
+  margin-top: 20px;
+}
+
+.thanks span {
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 1rem;
+  margin-top: 20px;
+  color: rgb(151, 109, 2);
+  font-weight: 400;
+}
+
 /* footer */
 footer {
   padding: 3rem;
-  background-color: #198754;
+  background-image: url(img/bg-utama.jpg);
 }
 
 footer a {
@@ -479,6 +626,13 @@ footer li {
     min-width: 85px;
     max-width: 95px;
   }
+  .intro .daun1,
+  .intro .daun2 {
+    width: 120px;
+  }
+  .intro .daun2 {
+    bottom: 80px;
+  }
   .home .heart {
     display: none;
   }
@@ -516,6 +670,11 @@ footer li {
     min-width: 80px;
     max-width: 90px;
     padding: 0.5rem;
+  }
+
+  .intro img {
+    max-width: 95px;
+    width: 30vw;
   }
   .mynavbar .nav-link {
     font-size: 2rem;
@@ -591,6 +750,13 @@ footer li {
     max-width: 60px;
     padding: 0.3rem;
     font-size: 1rem;
+  }
+  .intro .daun1,
+  .intro .daun2 {
+    width: 70px;
+  }
+  .intro .daun2 {
+    bottom: 40px;
   }
   .timeline::before {
     display: none;
