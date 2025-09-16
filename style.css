@@ -503,18 +503,25 @@ body {
   width: 400px; /* atur lebar sesuai kebutuhan */
   max-width: 100%;
   text-align: center; /* teks juga di tengah */
-  background: linear-gradient(135deg, #765f6cff, #3e3b1aff); /* hijau fresh */
+  background: linear-gradient(
+    135deg,
+    rgb(235, 223, 208),
+    rgb(117, 91, 61)
+  ); /* hijau fresh */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(150, 230, 161, 0.5);
-  color: #ffffffff; /* teks ikut berubah */
 }
 
 .gifts #collapseExample .card-body:hover {
-  color: #708d39ff;
+  color: rgb(141, 119, 57);
   box-shadow: 0 6px 80px rgba(0, 0, 0, 0.1);
   transform: translateY(-6px) scale(1.02);
-  background: linear-gradient(135deg, #435221ff, #075c12ff); /* hijau fresh */
+  background: linear-gradient(
+    135deg,
+    rgb(233, 230, 228),
+    rgb(229, 199, 156)
+  ); /* hijau fresh */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15), 0 0 20px rgba(150, 230, 161, 0.5);
-  color: #ffffffff; /* teks ikut berubah */
+  color: rgb(90, 88, 88);
 }
 .gifts #collapseExample .card-thanks {
   width: 600px;
@@ -674,6 +681,8 @@ footer li {
   .intro img {
     max-width: 95px;
     width: 30vw;
+    z-index: 0;
+    opacity: 0.3;
   }
   .mynavbar .nav-link {
     font-size: 2rem;
@@ -715,6 +724,12 @@ footer li {
     width: 50% !important;
   }
 
+  .rsvp form {
+    width: 80%;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
   .rsvp form label {
     padding-top: 0 !important;
     margin-bottom: 4px !important; /* label dekat ke input */
@@ -751,6 +766,7 @@ footer li {
     padding: 0.3rem;
     font-size: 1rem;
   }
+
   .intro .daun1,
   .intro .daun2 {
     width: 70px;

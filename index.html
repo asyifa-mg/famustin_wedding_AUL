@@ -204,7 +204,7 @@
             <p class="fade-in">
               Dengan penuh kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i
               untuk hadir dan memberikan doa restu pada acara pernikahan kami
-              yang akan dilaksanakan ditempat berikut:
+              yang akan dilaksanakan:
             </p>
           </div>
         </div>
@@ -326,29 +326,45 @@
           </div>
         </form>
         <div class="row justify-content-center mt-5">
-          <div class="col-md-6">
-            <div id="disqus_thread"></div>
-            <script>
-              var disqus_config = function () {
-                this.page.url = "https://wedding1-gold.vercel.app"; // URL halaman
-                this.page.identifier = "wedding1"; // ID unik untuk halaman ini
-              };
-
-              (function () {
-                var d = document,
-                  s = d.createElement("script");
-                s.src = "https://famustin-wedding.disqus.com/embed.js"; // shortname Disqus Anda
-                s.setAttribute("data-timestamp", +new Date());
-                (d.head || d.body).appendChild(s);
-              })();
-            </script>
-
-            <noscript>
-              Please enable JavaScript to view the
-              <a href="https://disqus.com/?ref_noscript">
-                comments powered by Disqus.
-              </a>
-            </noscript>
+          <div class="col-md-8">
+            <div
+              class="card shadow-sm mb-4"
+              style="background: #f8f9fa; border-radius: 18px"
+            >
+              <div
+                class="card-header text-center"
+                style="
+                  background: #a89272;
+                  color: #fff;
+                  font-size: 1.2rem;
+                  border-radius: 18px 18px 0 0;
+                "
+              >
+                <i class="bi bi-chat-dots"></i> Ucapan & Komentar
+              </div>
+              <div class="card-body p-4" style="min-height: 350px">
+                <div id="disqus_thread"></div>
+                <script>
+                  var disqus_config = function () {
+                    this.page.url = "https://wedding1-gold.vercel.app";
+                    this.page.identifier = "wedding1";
+                  };
+                  (function () {
+                    var d = document,
+                      s = d.createElement("script");
+                    s.src = "https://famustin-wedding.disqus.com/embed.js";
+                    s.setAttribute("data-timestamp", +new Date());
+                    (d.head || d.body).appendChild(s);
+                  })();
+                </script>
+                <noscript>
+                  Please enable JavaScript to view the
+                  <a href="https://disqus.com/?ref_noscript"
+                    >comments powered by Disqus.</a
+                  >
+                </noscript>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -385,20 +401,9 @@
                   alt="DANA"
                   style="max-width: 80px"
                 />
-                <p class="fw-bold mb-0 mt-3">085677889112</p>
+                <p class="fw-bold mb-0 mt-3">081210815101</p>
                 <p class="fw-bold mb-0">-Andre-</p>
               </div>
-
-              <div class="card card-body">
-                <img
-                  src="https://cdn.freelogovectors.net/wp-content/uploads/2023/10/gopay-logo-01-freelogovectors.net_-640x400.png"
-                  alt="DANA"
-                  style="max-width: 80px"
-                />
-                <p class="fw-bold mb-0 mt-2">085677889112</p>
-                <p class="fw-bold mb-0">-Andre-</p>
-              </div>
-
               <div class="card card-body card-thanks">
                 Terimakasih atas hadiah yang sudah diberikan kepada kami. Semoga
                 berkah dan selalu dilimpahkan rezeki.
@@ -464,7 +469,7 @@
     <div class="audio-container">
       <audio id="song" autoplay loop>
         <source
-          src="audio/Lagu Nikah - Juicy Luicy (Lyrics Video) [RPzsNJFxetc].mp3"
+          src="audio/Rizky Febian Feat.  Mahalini - Bermuara _ Lirik Lagu.mp3"
           type="audio/mp3"
         />
       </audio>
@@ -552,7 +557,7 @@
 
       function playAudio() {
         const song = document.querySelector("#song");
-        song.volume = 0.2;
+        song.volume = 0.5;
         audioIconWrapper.style.display = "flex";
         song.play();
         isPlaying = true;
