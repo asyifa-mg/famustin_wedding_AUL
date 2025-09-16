@@ -135,7 +135,6 @@ body {
 
 .mynavbar {
   background-color: rgba(85, 57, 4, 0.4) !important;
-  backdrop-filter: blur(7px);
 }
 
 .mynavbar .offcanvas {
@@ -150,15 +149,19 @@ body {
 }
 
 .mynavbar .offcanvas-header.bg-dark-subtle {
-  background-color: #bfbbb2 !important;
+  background-color: #877752 !important;
+}
+
+.mynavbar .myoffcanvas .offcanvas-body.navbar-nav {
+  background-color: #a37a00 !important;
 }
 
 .mynavbar .nav-link {
   text-transform: uppercase;
-  color: #804e23;
+  color: #8c745f;
 }
 .mynavbar .nav-link:hover {
-  color: #bf6f2d;
+  color: #7e3d0e;
 }
 
 .utama {
@@ -392,7 +395,7 @@ body {
 }
 
 .info .card-footer a {
-  color:var(--bs-warning-bg-subtle);
+  color: var(--bs-warning-bg-subtle);
   background-color: #7d4b00;
 }
 .info .card-footer a:hover {
